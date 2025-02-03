@@ -27,6 +27,26 @@ body {
     background-color: var(--primary-color) ;
 }
 
+/* cover */
+.cover {
+    color: var(--tertiary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    position: fixed;
+    z-index: 4;
+}
+.cover p {
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 1.5rem;
+}
+
 /* WILL YOU BE MY VALENTINE */
 h1 {
     text-align: center;

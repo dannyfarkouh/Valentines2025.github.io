@@ -7,6 +7,10 @@
     <title>Will you be my Valentine ?</title>
 </head>
 <body>
+    <div class="cover">
+        <p>Ready ? Click anywhere ! (Also please use a computer for better experience)</p>
+    </div>
+
     <div class="container">
         <h1>WILL YOU BE MY VALENTINE?</h1>
         <h2>내 발렌타인이 되어줄래?</h2>
@@ -24,7 +28,7 @@
         </div>
         <div>
             <div class="no-container">
-                <button class="btn">NO</button>
+                <button onclick="event.stopPropagation(); window.location.href='./no-button.html'" class="btn">NO</button>
                 <div class="hidden-content content-no">
                     <p>👎👎NOOOOOOOOOOO👎👎</p>
                     <P>👎👎NONONONONONONO👎👎</P>
