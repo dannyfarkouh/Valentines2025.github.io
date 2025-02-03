@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+:root {
+    --primary-color: #F7CFD8;
+    --secondary-color: #f8a5c2;
+    --tertiary-color: #f668a1;
+    --quaternary-color: #f24c8e;
+    --quinary-color: #f12e76;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Audiowide", serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    align-content: center;
+    height: 100vh; 
+    overflow: hidden; 
+    margin: 0; 
+    background-color: var(--primary-color) ;
+}
+
+/* WILL YOU BE MY VALENTINE */
+h1 {
+    text-align: center;
+    font-size: 3.4rem;
+    color: whitesmoke; 
+    margin-bottom: 6rem;
+    animation: glow 1.6s ease-in-out infinite alternate;
+}
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px var(--secondary-color);
+    }
+    to {
+        text-shadow: 0 0 20px var(--secondary-color), 0 0 20px var(--tertiary-color), 0 0 35px var(--quaternary-color);
+    }
+}
+/* date */
+h3 {
+    text-align: center;
+    position: relative;
+    font-size: 0.9rem;
+    color: whitesmoke;
+    text-shadow: 0 0 10px var(--tertiary-color);
+    top: -30%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    z-index: 2;
+}
+
+/* yes or no BUTTONS  */
+#yes-or-no {
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    width: 50%;
+    height: 10%;
+}
+.btn {
+    font-family: "Audiowide", serif;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--tertiary-color);
+    color: whitesmoke;
+    transition: all 0.55s;
+}
+.btn:hover {
+    background-color: var(--quinary-color);
+    padding: 2rem 4rem;
+    font-size: 2rem;
+    box-shadow: 0 0 10px var(--quaternary-color);  
+}
+
+/* FOOTER */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    text-align: center;
+    padding: 0.2rem;
+    background-color: var(--secondary-color);
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-style: italic;
+    text-shadow: 0 0 10px var(--tertiary-color);
+    animation: glow2 1.6s ease-in-out infinite alternate;
+}
+@keyframes glow2 {
+    from {
+        box-shadow: 0 0 20px var(--secondary-color);
+    }
+    to {
+        box-shadow: 0 0 20px var(--secondary-color), 0 0 20px var(--secondary-color), 0 0 35px var(--secondary-color);
+    }
+}
+
+/* hearts */
+.heart:before, 
+.heart:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 160px;
+    background-color: var(--tertiary-color);
+    border-radius: 50px 50px 0 0;
+}
+.heart:before {
+    left: 100px;
+
+    -webkit-transform: rotate(-45deg);
+    -transform:rotate(-45deg);
+    
+    -webkit-transform-origin:0 100%;
+    transfporm-origin: 0 100%;
+}
+.heart:after {
+    left: 0;
+
+    -webkit-transform: rotate(45deg);
+    -transform:rotate(45deg);
+
+    -webkit-transform-origin:100% 100%;
+    transfporm-origin: 100% 100%;
+}
+.heart {
+    position: fixed; 
+    height: 170px;
+    width: 200px;
+    z-index: 1;
+}
+/* Individual heart positions */
+.heart1 {
+    top: 25%;
+    left: 10%;
+    animation: float1 6s infinite alternate;
+}
+.heart2 {
+    top: 12%;
+    left: 70%;
+    animation: float2 4s infinite alternate;
+}
+.heart3 {
+    top: 70%;
+    left: 75%;
+    animation: float3 5s infinite alternate;
+}
+/* Animation keyframes */
+@keyframes float1 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translate3d(10px, -5px, 0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes float2 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translate3d(-11px, -7px, 0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes float3 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translate3d(7px, -10px, 0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hidden-content {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 60%; /* Adjust position relative to the button */
+    left: 0; /* Start at the button's left */
+    width: 200px;
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateX(-100%); /* Moves off-screen */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.yes-container:hover .hidden-content {
+    opacity: 1;
+    transform: translateX(100px); /* Moves into view */
+}
+
+
+/* media query */
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+}
