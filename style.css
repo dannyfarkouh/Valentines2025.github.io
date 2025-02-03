@@ -43,14 +43,15 @@ h1 {
         text-shadow: 0 0 20px var(--secondary-color), 0 0 20px var(--tertiary-color), 0 0 35px var(--quaternary-color);
     }
 }
-/* date */
-h3 {
+/* korean */
+h2 {
     text-align: center;
     position: relative;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     color: whitesmoke;
     text-shadow: 0 0 10px var(--tertiary-color);
     top: -30%;
+    animation: glow 1.6s ease-in-out infinite alternate;
 }
 
 .container {
@@ -198,29 +199,49 @@ footer {
     }
 }
 
-.hidden-content {
+/* hidden messages when hovering over yes and no buttons */
+.hidden-content.content-yes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 1.4rem;
-    position: absolute;
-    top: 60%; /* Adjust position relative to the button */
-    left: 0; /* Start at the button's left */
-    width: 200px;
+    position: fixed;
+    top: 20%; 
+    left: 0px; 
+    width: 500px;
     padding: 10px;
-    color: black;
+    color: whitesmoke;
     border-radius: 5px;
     opacity: 0;
-    transform: translateX(-100%); /* Moves off-screen */
+    background-color: var(--quaternary-color);
+    transform: translateX(-100%); 
     transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 3;
 }
-
+.hidden-content.content-no {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4rem;
+    position: fixed;
+    top: 20%; 
+    left: calc(100% - 500px); 
+    width: 500px;
+    padding: 10px;
+    color: whitesmoke;
+    border-radius: 5px;
+    opacity: 0;
+    background-color: var(--quaternary-color);
+    transform: translateX(100%); 
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 3;
+}
 .yes-container:hover .hidden-content {
     opacity: 1;
-    transform: translateX(100px); /* Moves into view */
+    transform: translateX(20vw); 
+}
+.no-container:hover .hidden-content {
+    opacity: 1;
+    transform: translateX(-20vw); 
 }
 
-
-/* media query */
-@media (max-width: 1000px) {
-    h1 {
-        font-size: 2.8rem;
-    }
-}
